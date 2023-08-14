@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: user-tasks
+  datasource:
+    url: jdbc:h2:mem:user-tasks
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
