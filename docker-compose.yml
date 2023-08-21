@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  db:
+    container_name: user_tasks_pg
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: user_tasks
+    ports:
+      - "5433:5432"
+    restart: unless-stopped
