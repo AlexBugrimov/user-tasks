@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="min-h-screen bg-sky-100 flex justify-center items-center">
+    <h1 class="text-3xl font-bold text-center" >Welcome! -&nbsp;<span sec:authentication="name">Name</span></h1>
+</div>
+</body>
+</html>

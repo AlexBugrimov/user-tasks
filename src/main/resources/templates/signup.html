@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="min-h-screen bg-sky-100 flex justify-center items-center">
+    <div class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
+        <div>
+            <h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">
+                Create An Account
+            </h1>
+            <p class="w-80 text-center text-sm mb-8 font-semibold text-gray-700 tracking-wide cursor-pointer mx-auto">
+                Welcome to User Tasks!
+            </p>
+        </div>
+        <form th:action="@{/signup}" method="post" th:object="${userView}">
+            <div class="space-y-4">
+                <input th:field="*{name}" type="text" name="name" id="name" placeholder="Name" class="block text-sm py-3 px-4 rounded-lg w-full border outline-none focus:ring focus:outline-none focus:ring-sky-400"/>
+                <input th:field="*{birthDate}" type="date" name="birthDate" id="birthDate" placeholder="Birth date" class="block text-sm py-3 px-4 rounded-lg w-full border outline-none focus:ring focus:outline-none focus:ring-sky-400"/>
+                <input th:field="*{username}" type="text" name="username" id="username" placeholder="Username" class="block text-sm py-3 px-4 rounded-lg w-full border outline-none focus:ring focus:outline-none focus:ring-sky-400"/>
+                <input th:field="*{phone}" type="text" name="phone" id="phone" placeholder="Phone number" class="block text-sm py-3 px-4 rounded-lg w-full border outline-none focus:ring focus:outline-none focus:ring-sky-400"/>
+                <input th:field="*{email}" type="email" name="email" id="email" placeholder="Email" class="block text-sm py-3 px-4 rounded-lg w-full border outline-none focus:ring focus:outline-none focus:ring-sky-400"/>
+                <input th:field="*{password}" type="password" name="password" id="password" placeholder="Password" class="block text-sm py-3 px-4 rounded-lg w-full border outline-none focus:ring focus:outline-none focus:ring-sky-400"/>
+            </div>
+            <div class="text-center mt-6">
+                <button type="submit" class="py-3 w-64 text-xl text-white bg-sky-400 rounded-2xl hover:bg-sky-300 active:bg-sky-500 outline-none">
+                    Create Account
+                </button>
+                <p class="mt-4 text-sm">Already have an account?&nbsp;<span class="underline cursor-pointer"><a th:href="@{/login}">Sign In</a></span></p>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
