@@ -1,13 +1,15 @@
+server:
+  port: 9090
 spring:
   application:
     name: user-tasks
   datasource:
-    username: postgres
-    password: postgres
-    url: jdbc:postgresql://localhost:5432/user_tasks?currentSchema=public
+    username: dev
+    password: password
+    url: jdbc:postgresql://localhost:5433/user_tasks?currentSchema=public
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
